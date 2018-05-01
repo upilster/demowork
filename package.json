@@ -1,0 +1,15 @@
+{
+  "name": "WorkClub",
+  "version": "1.0.0",
+  "description": "This is the site for rent workspaces",
+  "main": "server.js",
+  "repository": "https://github.com/upilster/demowork",
+  "author": "Upile",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
