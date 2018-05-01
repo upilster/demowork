@@ -36,7 +36,6 @@
   $(".nav__toggle").click(function() {
     $(".nav").toggleClass("nav--active");
   });
-
   // Scroll to link
   $("[data-scroll]").click(function(e) {
     e.preventDefault();
