@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import './Styles/css/styles.min.css'
 import './App.css';
+import Home from './Components/Routes/Home'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello this will be the site!!!!!</h1>
+        <Home />
       </div>
     );
   }

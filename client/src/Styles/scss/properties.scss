@@ -1,0 +1,205 @@
+@import 'config';
+
+.properties {
+  .container {
+    padding: 3rem;
+    border-bottom: 1px solid #eee;
+
+    @media screen and (min-width: 1101px) {
+      padding: 6rem 3rem;
+    }
+  }
+}
+
+.property {
+  display: inline-block;
+  float: left;
+  margin-bottom: 3rem;
+  box-shadow: 0 0 0 -5px #b4b6c1;
+  transition: all .4s;
+  border-radius: 4px;
+  cursor: default;
+  border: 1px solid #eee;
+  box-shadow: 0 0 6px -2px #b4b6c1;
+
+
+  @media screen and (min-width: 1101px) {
+    width: 30%;
+    width: calc((100% - 6rem ) / 3 );
+
+    &:nth-child(3n+2) {
+      margin-left: 3rem;
+      margin-right: 3rem;
+    }
+  }
+
+  @media screen and (min-width: 611px) and (max-width: 1100px) {
+    width: 45%;
+    width: calc((100% - 3rem ) / 2 );
+
+    &:nth-child(odd) {
+      margin-right: 3rem;
+    }
+  }
+
+  @media screen and (max-width: 610px) {
+    display: block;
+    float: none;
+  }
+
+  &:hover {
+    box-shadow: 0 0 30px -5px #b4b6c1;
+  }
+}
+
+.property__bid {
+  position: relative;
+  color: white;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+
+  &__image {
+    padding-bottom: 65%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 4px 4px 0 0;
+
+    &:before, &:after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 100%;
+      left: 0%;
+    }
+
+    &:before {
+      height: 20%;
+      top: 0;
+      background: linear-gradient(rgba(0,0,0,0.3), transparent);
+    }
+
+    &:after {
+      height: 35%;
+      top: 65%;
+      background: linear-gradient(transparent, rgba(0,0,0,0.3));
+    }
+  }
+
+  &__status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    font-weight: bold;
+
+    i {
+      font-size: 1.8rem;
+      vertical-align: bottom;
+    }
+
+    &--open {
+
+    }
+
+    &--sold {
+
+    }
+  }
+
+  &__time, &__price {
+    position: absolute;
+    display: inline-block;
+    bottom: 1rem;
+    z-index: 1;
+
+    small {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      font-size: .65rem;
+    }
+  }
+
+  &__time {
+    left: 1rem;
+    text-align: left;
+
+    time {
+      line-height: 1.6rem;
+    }
+  }
+
+  &__price {
+    right: 1rem;
+    text-align: right;
+
+    span {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+    }
+  }
+}
+
+.property__info {
+  padding: 1rem;
+
+  &__title {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+
+  &__location {
+    margin: 0 0 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  &__offered-by {
+    font-size: 0.8rem;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  &__agent {
+    position: relative;
+    padding-left: 3.5rem;
+    min-height: 2.5rem;
+
+    &__image {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 100%;
+      box-shadow: 0 0 6px -2px #b4b6c1;
+    }
+
+    &__name {
+      display: block;
+      font-size: 0.85rem;
+      letter-spacing: 0.35px;
+    }
+
+    &__rating {
+      line-height: 1.5;
+      color: $primary-color;
+    }
+
+  }
+}
+
+.properties__view-more {
+  display: block;
+  margin: auto;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  background: $primary-color;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
