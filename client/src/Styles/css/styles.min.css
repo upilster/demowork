@@ -88,6 +88,7 @@ section h2:first-child {
   background-position: center;
   background-size: cover;
   color: #fff;
+  background-attachment: fixed;
 }
 .header:before {
   position: absolute;
@@ -355,8 +356,7 @@ section h2:first-child {
   top: 0;
   left: 0;
   z-index: 9;
-  position: fixed;
-  background-color: #2a2a2a;
+  background-color: transparent;
 }
 .nav--active .nav__toggle span:nth-child(1) {
   -webkit-transform: translateY(8px) rotate(45deg) !important;
@@ -419,7 +419,7 @@ section h2:first-child {
 }
 .nav__toggle {
   position: absolute;
-  top: 6px;
+  top: 14px;
   right: 26px;
   display: none;
   float: right;
@@ -448,6 +448,31 @@ section h2:first-child {
   transform: translateX(5px);
 }
 @media screen and (max-width: 1000px) {
+  footer{
+    margin-top: 0 !important;
+  }
+  footer a i{
+    margin: 0 5px;
+  }
+  footer .social a{
+    font-size: 1.6rem;
+  }
+  footer h5{
+    font-size: 1.6rem;
+  }
+  section h2:first-child {
+    margin-bottom: 10px;
+  }
+  .header{
+    margin-bottom: 24px;
+  }
+  .properties__view-more{
+    margin-bottom: 24px !important;
+  }
+  .nav {
+    position: fixed;
+    background-color: #282f39;
+  }
   .nav--active .nav__items {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -863,4 +888,7 @@ New Section*/
 }
 .testimonial__user span {
   color: #aaa;
+}
+button:focus {
+  outline: 0;
 }

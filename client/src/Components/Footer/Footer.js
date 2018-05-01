@@ -13,7 +13,7 @@ export default class Footer extends Component {
                   Get connected with us on social networks!
                 </h5>
               </div>
-              <div className="col-md-6 col-lg-7 text-center text-md-right">
+              <div className="col-md-6 col-lg-7 text-center text-md-right social">
                 <a className="fb-ic ml-0">
                   <i className="fa fa-facebook text-light mr-lg-4"> </i>
                 </a>
@@ -47,20 +47,20 @@ export default class Footer extends Component {
             </div>
             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
               <h6 className="text-uppercase text-light font-weight-bold">
-                <strong>Products</strong>
+                <strong>ARTICLES</strong>
               </h6>
               <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: 60}} />
               <p>
-                <a href="#!">MDBootstrap</a>
+                <a href="#!">LINK</a>
               </p>
               <p>
-                <a href="#!">MDWordPress</a>
+                <a href="#!">LINK</a>
               </p>
               <p>
-                <a href="#!">BrandFlow</a>
+                <a href="#!">LINK</a>
               </p>
               <p>
-                <a href="#!">Bootstrap Angular</a>
+                <a href="#!">LINK</a>
               </p>
             </div>
 
@@ -73,16 +73,16 @@ export default class Footer extends Component {
                 style={{ width: 60 }}
               />
               <p>
-                <a href="#!">Your Account</a>
+              <a href="#!">HOW IT WORKS</a>
               </p>
               <p>
-                <a href="#!">Become an Affiliate</a>
+              <a href="#!">FAQ</a>
               </p>
               <p>
-                <a href="#!">Shipping Rates</a>
+              <a href="#!">HELP</a>
               </p>
+              <a href="#!">TERMS AND POLICY</a>
               <p>
-                <a href="#!">Help</a>
               </p>
             </div>
 
@@ -95,7 +95,7 @@ export default class Footer extends Component {
                 style={{ width: 60 }}
               />
               <p>
-                <i className="fa fa-home mr-3" /> New York, NY 10012, US
+                <i className="fa fa-home mr-3" /> 25 Union Terrace, LOCHSIDE, UK
               </p>
               <p>
                 <i className="fa fa-envelope mr-3" /> info@example.com
@@ -103,9 +103,9 @@ export default class Footer extends Component {
               <p>
                 <i className="fa fa-phone mr-3" /> + 01 234 567 88
               </p>
-              <p>
+              {/* <p>
                 <i className="fa fa-print mr-3" /> + 01 234 567 89
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
