@@ -904,6 +904,7 @@ button:focus {
 .room--by--location .property{
   border-color: transparent !important;
   box-shadow: none !important;
+  margin-bottom: 0px;
 }
 .room--by--location .property .property__info__title{
   color: #fff;
