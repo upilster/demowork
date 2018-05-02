@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Nav from "../../Header/Nav";
 import Header from "../../Header/Header";
 import searchIcon from "../../../Media/loupe.png";
 import PropterySec from "./PropertySec";

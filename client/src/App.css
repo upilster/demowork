@@ -1,0 +1,19 @@
+.conversation-container .header {
+  background-color: rgb(65, 191, 241) !important;
+  display: block;
+  background: none;
+  height: auto !important;
+}
+.client {
+  background-color: rgb(65, 191, 241);
+  color: #fff;
+}
+.conversation-container .title {
+  color: #fff;
+}
+.conversation-container, .launcher{
+  box-shadow: 0 8px 38px 5px hsla(210,1%,58%,.3)
+}
+.launcher{
+  background-color: rgb(65, 191, 241);
+}
