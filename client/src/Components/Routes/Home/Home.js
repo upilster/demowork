@@ -12,7 +12,7 @@ class Home extends Component {
     return (
       <div className="Home">
         <Header searchIcon={searchIcon} />
-        <RoomsByLocation />
+        <RoomsByLocation title="Rooms nearby"/>
         <div className="container">
           <PropterySec title="CO-WORKING" />
           <PropterySec title="MEETING ROOMS" />

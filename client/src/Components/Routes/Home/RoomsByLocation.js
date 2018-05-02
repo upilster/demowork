@@ -7,6 +7,9 @@ export default class RoomsByLocation extends Component {
     return (
       <div className="room--by--location">
         <section id="properties" className="properties">
+          <br/>
+          <h2 className="text-center text-light mt-4">{this.props.title}</h2>
+          <br />
           <div className="container">
             <SinglePropertyCard
               backgroundImage={backgroundImage1}
@@ -35,10 +38,11 @@ export default class RoomsByLocation extends Component {
             <button
               type="button"
               name="button"
-              className="properties__view-more"
+              className="properties__view-more mb-4"
             >
               View more
             </button>
+            <br/>
           </div>
         </section>
       </div>

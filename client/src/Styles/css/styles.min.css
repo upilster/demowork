@@ -660,7 +660,7 @@ New Section*/
 }
 @media screen and (min-width: 1101px) {
   .properties .container {
-    padding: 6rem 3rem;
+    padding: 4rem 3rem;
   }
   .property {
     width: 30%;
@@ -891,4 +891,29 @@ New Section*/
 }
 button:focus {
   outline: 0;
+}
+.room--by--location{
+  border: 1px solid #282f39;
+  background-color:#282f39;
+  color: #fff !important;
+  position: relative;
+  top: -80px;
+  left: 10%;
+  width: 80%;
+}
+.room--by--location .property{
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+.room--by--location .property .property__info__title{
+  color: #fff;
+}
+.room--by--location .property .property__bid__status{
+  display: none;
+}
+.room--by--location .property .property__info {
+  padding: 1.7rem 0;
+}
+.room--by--location .properties .container{
+  padding: 0rem 3rem;
 }

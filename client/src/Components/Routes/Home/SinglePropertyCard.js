@@ -8,7 +8,7 @@ export default class SinglePropertyCard extends Component {
       title,
       location,
       agentImage,
-      agentname
+      agentName
     } = this.props;
     return (
       <div className="property">
@@ -42,7 +42,7 @@ export default class SinglePropertyCard extends Component {
             />
             <p className="property__info__offered-by">
               Offered by:
-              <span className="property__info__agent__name">{agentname}</span>
+              <span className="property__info__agent__name">{agentName}</span>
               <span className="property__info__agent__rating">
                 <i className="fa fa-star" aria-hidden="true" />
                 <i className="fa fa-star" aria-hidden="true" />
