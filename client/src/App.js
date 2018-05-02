@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import logo from "./Media/workclub_logo.png";
 import ico from "./Media/favicon.ico";
-import { Launcher } from "react-chat-window";
 import {
   Widget,
   addResponseMessage,
