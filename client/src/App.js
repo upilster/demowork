@@ -23,7 +23,8 @@ class App extends Component {
     autobind(this);
   }
   componentDidMount() {
-    addResponseMessage("Welcome to this awesome chat!");
+    addResponseMessage("Hey! My name is Sister Jane, welcome to WorkClub.");
+    addResponseMessage("How can i help?");
   }
   handleNewUserMessage = newMessage => {
     console.log(`New message incomig! ${newMessage}`);
@@ -39,8 +40,8 @@ class App extends Component {
         <Widget
           handleNewUserMessage={this.handleNewUserMessage}
           profileAvatar={ico}
-          title="My new awesome title"
-          subtitle="And my cool subtitle"
+          title="Welcome to live chat"
+          subtitle="Sister Jane"
         />
       </div>
     );
