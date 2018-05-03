@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import searchIcon from "../../../Media/loupe.png";
 import backgroundImage1 from "../../../Media/image3.jpg";
 import agent1Image from "../../../Media/agents/agent2.jpg";
@@ -10,7 +11,7 @@ class Browse_Spaces extends Component {
       <div className="Browse--space">
       <Header searchIcon={searchIcon} />
       <div className="container">
-      <PropterySec />
+      <PropterySec/>
       </div>
       </div>
     );

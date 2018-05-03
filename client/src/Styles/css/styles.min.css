@@ -942,3 +942,28 @@ button:focus {
   padding: 0rem 3rem;
   border-bottom: 0;
 }
+.form-control:focus {
+  border-color: #cccccc;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.fa-user-circle-o{
+  color: gray;
+}
+.Browse--space .form-group input, .Browse--space .form-group select{
+  border:none;
+  background-color: transparent;
+  color: #282f39;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.Browse--space .form-group ::placeholder{
+  color: #282f39;
+}
+.Browse--space .form-group{
+  border-bottom: 1px gray solid;
+  padding: 3px 7px 3px 0;
+  margin-right: 1rem;
+}
+
