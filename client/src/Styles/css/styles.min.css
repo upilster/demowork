@@ -76,7 +76,7 @@ section h2:first-child {
 }
 .container {
   width: 100%;
-  max-width: 1440px;
+  /* max-width: 1440px; */
   margin: auto;
   padding: 0 3rem;
 }
@@ -643,7 +643,7 @@ section h2:first-child {
         padding:0
     }
 }
-New Section*/
+
 
 .properties .container {
   padding: 3rem;
@@ -673,8 +673,9 @@ New Section*/
 }
 @media screen and (min-width: 611px) and (max-width: 1100px) {
   .property {
-    width: 45%;
-    width: calc((100% - 3rem) / 2);
+    /* width: 45%; */
+    /* width: calc((100% - 3rem) / 2); */
+    width: 100%;
   }
   .property:nth-child(odd) {
     margin-right: 3rem;
@@ -914,4 +915,5 @@ button:focus {
 }
 .room--by--location .properties .container{
   padding: 0rem 3rem;
+  border-bottom: 0;
 }
