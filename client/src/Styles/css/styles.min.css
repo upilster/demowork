@@ -463,9 +463,6 @@ section h2:first-child {
   section h2:first-child {
     margin-bottom: 10px;
   }
-  .header{
-    margin-bottom: 24px;
-  }
   .properties__view-more{
     margin-bottom: 24px !important;
   }
@@ -896,10 +893,7 @@ button:focus {
   border: 1px solid #282f39;
   background-color:#282f39;
   color: #fff !important;
-  position: relative;
-  top: -80px;
-  left: 10%;
-  width: 80%;
+  width: 100%;
 }
 .room--by--location .property{
   border-color: transparent !important;
