@@ -463,6 +463,9 @@ section h2:first-child {
   section h2:first-child {
     margin-bottom: 10px;
   }
+  .room--by--location{
+    margin-bottom: 24px;
+  }
   .properties__view-more{
     margin-bottom: 24px !important;
   }

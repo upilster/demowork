@@ -6,7 +6,7 @@ export default class RoomsByLocation extends Component {
   render() {
     return (
       <div className="room--by--location">
-        <section id="properties" className="properties">
+        <section id="properties" className="properties container">
           <br/>
           <h2 className="text-center text-light mt-4">{this.props.title}</h2>
           <br />
