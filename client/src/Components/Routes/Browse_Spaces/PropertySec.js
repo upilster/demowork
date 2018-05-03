@@ -35,7 +35,6 @@ export default class PropterySec extends Component {
             hasMore={this.state.hasMore}
             loader={<h4>Loading...</h4>}
           >
-            >
             {this.state.items.map((i, index) => (
               <SinglePropertyCard
                 key={index}
