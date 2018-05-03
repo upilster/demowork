@@ -40,7 +40,7 @@ export default class PropterySec extends Component {
                   type="email"
                   name="email"
                   id="exampleEmail"
-                  placeholder="search by location"
+                  placeholder="Search by location"
                 />
               </FormGroup>{" "}
               <FormGroup>
