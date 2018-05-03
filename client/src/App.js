@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
 import logo from "./Media/workclub_logo.png";
 import ico from "./Media/favicon.ico";
 import {
@@ -14,6 +15,7 @@ import "./App.css";
 import Nav from "./Components/Header/Nav";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Routes/Home/Home";
+import Browse_Spaces from "./Components/Routes/Browse_Spaces/Browse_Spaces";
 class App extends Component {
   constructor() {
     super();
@@ -35,7 +37,20 @@ class App extends Component {
     return (
       <div className="App">
         <Nav logo={logo} />
-        <Home />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            component={() => (
+              <Home />
+            )}
+          />
+          <Route
+            exact
+            path="/browse-space"
+            component={() => <Browse_Spaces />}
+          />
+        </Switch>
         <Footer />
         <Widget
           handleNewUserMessage={this.handleNewUserMessage}

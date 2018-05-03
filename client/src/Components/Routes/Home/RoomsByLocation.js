@@ -7,7 +7,7 @@ export default class RoomsByLocation extends Component {
     return (
       <div className="room--by--location">
         <section id="properties" className="properties container">
-          <br/>
+          <br />
           <h2 className="text-center text-light mt-4">{this.props.title}</h2>
           <br />
           <div className="container">
@@ -42,7 +42,7 @@ export default class RoomsByLocation extends Component {
             >
               View more
             </button>
-            <br/>
+            <br />
           </div>
         </section>
       </div>

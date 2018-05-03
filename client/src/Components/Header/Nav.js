@@ -21,7 +21,7 @@ export default class Nav extends Component {
           </a>
           <ul className="nav__items">
             <li className="nav__item">
-              <a href="#">Browse Spaces</a>
+              <a href="/browse-space">Browse Spaces</a>
             </li>
             <li className="nav__item">
               <a href="#" data-scroll="#how">

@@ -101,16 +101,37 @@ section h2:first-child {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(255, 56, 106, 0));
   z-index: 1;
 }
-.header__video {
+.Browse--space .header {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  background-image: url(../../Media/image2.jpg);
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  background-attachment: fixed;
+}
+.Browse--space .header:before {
   position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(255, 56, 106, 0));
+  z-index: 1;
+}
+.Browse--space .header__content {
+  position: relative;
   top: 50%;
-  left: 50%;
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  transform: translate3d(-50%, -50%, 0);
-  min-width: 100%;
-  min-height: 100%;
-  height: auto;
-  width: auto;
+  margin: auto;
+  padding: 0 3rem;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: #fff;
+  z-index: 1;
 }
 .header__content {
   position: relative;
@@ -669,6 +690,10 @@ section h2:first-child {
   .property:nth-child(2n) {
     margin-left: 3rem;
     margin-right: 3rem;
+  }
+  .Browse--space .property:nth-child(n){
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
 @media screen and (min-width: 611px) and (max-width: 1100px) {
