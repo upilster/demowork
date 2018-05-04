@@ -27,6 +27,7 @@ export default class PropterySec extends Component {
     return (
       <section id="properties" className="properties">
         <h2>{this.props.title}</h2>
+        <p className="text-center">69 spaces</p>
         <div className="container">
           <InfiniteScroll
             dataLength={this.state.items.length}

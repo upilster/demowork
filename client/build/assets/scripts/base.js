@@ -30,9 +30,15 @@
         }
       ]
     });
-    $('.filter-btn').click(function(){
+    $('#filter').click(function(){
       $(this).hide()
+      $('#clear-filter').show()
       $('.filter').slideDown();
+    })
+    $('#clear-filter').click(function(){
+      $(this).hide()
+      $('#filter').show()
+      $('.filter').slideUp();
     })
     $(window).scroll(function(){
       if ($(this).scrollTop() > 100) {

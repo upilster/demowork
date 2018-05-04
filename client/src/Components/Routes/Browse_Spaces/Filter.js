@@ -5,11 +5,6 @@ export default class Filter extends Component {
   render() {
     return (
       <React.Fragment>
-        <button
-          className="btn btn-dark btn-block filter-btn"
-        >
-          <i className="fa fa-cogs" /> Filter
-        </button>
         <div
           className="filter"
         >
