@@ -24,21 +24,21 @@ export default class Nav extends Component {
               <a href="/browse-space">Browse Spaces</a>
             </li>
             <li className="nav__item">
-              <a href="#" data-scroll="#how">
+              <a href="/">
                 How it works
               </a>
             </li>
             <li className="nav__item">
-              <a href="#">Help</a>
+              <a href="/">Help</a>
             </li>
             <li className="nav__item">
-              <a href="#">Talk to us</a>
+              <a href="/">Talk to us</a>
             </li>
             <li className="nav__item">
-              <a href="#">Login</a>
+              <a href="/">Login</a>
             </li>
             <li className="nav__item nav__item--important">
-              <a href="#">Add a space</a>
+              <a href="/">Add a space</a>
             </li>
           </ul>
           <button className="nav__toggle" onClick={this.toggle}>

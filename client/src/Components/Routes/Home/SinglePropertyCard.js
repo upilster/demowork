@@ -12,6 +12,7 @@ export default class SinglePropertyCard extends Component {
     } = this.props;
     return (
       <div className="property">
+      <a href="/browse-space/separate-space">
         <div className="property__bid">
           <div
             className="property__bid__image"
@@ -53,6 +54,7 @@ export default class SinglePropertyCard extends Component {
             </p>
           </div>
         </div>
+        </a>
       </div>
     );
   }

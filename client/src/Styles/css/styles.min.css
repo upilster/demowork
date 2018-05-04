@@ -948,6 +948,11 @@ button:focus {
 }
 
 /* Browse space */
+.property a{
+  text-decoration: none;
+  color: #212529;
+  cursor: pointer;
+}
 .Browse--space .form-group i {
   color: #fff;
 }
