@@ -1,10 +1,9 @@
 (function(window, $, undefined) {
-  'use strict';
+  "use strict";
 
   $(document).ready(function() {
-
     // Testimonials carousel initialization
-    $('.testimonials__slider').slick({
+    $(".testimonials__slider").slick({
       autoplay: true,
       testimonials__arrows: false,
       slidesToShow: 3,
@@ -30,29 +29,29 @@
         }
       ]
     });
-    $('#filter').click(function(){
-      $(this).hide()
-      $('#clear-filter').show()
-      $('.filter').slideDown();
-    })
-    $('#clear-filter').click(function(){
-      $(this).hide()
-      $('#filter').show()
-      $('.filter').slideUp();
-    })
-    $(window).scroll(function(){
+    $("#filter").click(function() {
+      $(this).hide();
+      $("#clear-filter").show();
+      $(".filter").hide();
+    });
+    $("#clear-filter").click(function() {
+      $(this).hide();
+      $("#filter").show();
+      $(".filter").hide();
+    });
+    $(window).scroll(function() {
       if ($(this).scrollTop() > 100) {
-          $('#scroll-top').fadeIn();
+        $("#scroll-top").fadeIn();
       } else {
-          $('#scroll-top').fadeOut();
+        $("#scroll-top").fadeOut();
       }
-  });
+    });
 
-  //Click event to scroll to top
-  $('#scroll-top').click(function(){
-      $('html, body').animate({scrollTop : 0},800);
+    //Click event to scroll to top
+    $("#scroll-top").click(function() {
+      $("html, body").animate({ scrollTop: 0 }, 800);
       return false;
-  });
+    });
   });
 
   // Mobile navigation toggle
@@ -63,8 +62,12 @@
   $("[data-scroll]").click(function(e) {
     e.preventDefault();
 
-    $('html, body').animate({
+    $("html, body").animate(
+      {
         scrollTop: $(e.target.dataset.scroll).offset().top
-    }, 500, 'linear');
-  })
+      },
+      500,
+      "linear"
+    );
+  });
 })(window, jQuery, undefined);
