@@ -11,7 +11,7 @@ export default class Header extends Component {
             <input
               type="text"
               name="search"
-              placeholder="What are you looking for?"
+              placeholder="Search by space or location...."
             />
             <img src={this.props.searchIcon} alt="icon" />
             <button type="button" name="button">

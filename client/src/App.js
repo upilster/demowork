@@ -58,6 +58,10 @@ class App extends Component {
           title="Welcome to live chat"
           subtitle="Sister Jane"
         />
+        <button id="scroll-top" title="Go to top">
+          {" "}
+          <i className="fa fa-arrow-up" />
+        </button>
       </div>
     );
   }
