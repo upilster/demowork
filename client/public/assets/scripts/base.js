@@ -32,7 +32,7 @@
     $("#filter").click(function() {
       $(this).hide();
       $("#clear-filter").show();
-      $(".filter").hide();
+      $(".filter").show();
     });
     $("#clear-filter").click(function() {
       $(this).hide();
