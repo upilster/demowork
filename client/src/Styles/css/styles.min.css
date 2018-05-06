@@ -1142,6 +1142,10 @@ button:focus {
   display: none;
 }
 @media screen and (max-width: 1000px) {
+  .map-sec-mobile{
+    padding: 0 !important;
+    border: none !important;
+  }
   .Single-room .property__info.hide{
     display: block;
   }

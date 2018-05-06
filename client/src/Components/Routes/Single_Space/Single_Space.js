@@ -415,7 +415,7 @@ class Single_Space extends Component {
               </div>
             </div>
             <div className="col-md-4">
-              <div className="p-3 border rounded my-4">
+              <div className="p-3 border rounded my-4 map-sec-mobile">
                 <div className="hide-gallery">
                   <Gallery photos={photos} onClick={this.openLightbox} />
                   <Lightbox
