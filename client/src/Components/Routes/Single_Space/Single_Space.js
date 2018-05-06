@@ -9,6 +9,8 @@ import {
   CarouselCaption,
   Table
 } from "reactstrap";
+import Gallery from "react-photo-gallery";
+import Lightbox from "react-images";
 import backgroundImage1 from "../../../Media/properties/house1.jpg";
 import backgroundImage2 from "../../../Media/properties/house2.jpg";
 import backgroundImage3 from "../../../Media/properties/house3.jpg";
@@ -38,10 +40,20 @@ const items = [
   }
 ];
 
+const photos = [
+  { src: backgroundImage1, width: 4, height: 3 },
+  { src: backgroundImage2, width: 1, height: 1 },
+  { src: backgroundImage3, width: 3, height: 4 }
+];
+
 class Single_Space extends Component {
   constructor(props) {
     super(props);
-    this.state = { activeIndex: 0 };
+    this.state = { activeIndex: 0, currentImage: 0, lightboxIsOpen: false };
+    this.openLightbox = this.openLightbox.bind(this);
+    this.closeLightbox = this.closeLightbox.bind(this);
+    this.gotoNext = this.gotoNext.bind(this);
+    this.gotoPrevious = this.gotoPrevious.bind(this);
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.goToIndex = this.goToIndex.bind(this);
@@ -55,6 +67,29 @@ class Single_Space extends Component {
     },
     zoom: 8
   };
+  // GALLERY
+  openLightbox(event, obj) {
+    this.setState({
+      currentImage: obj.index,
+      lightboxIsOpen: true
+    });
+  }
+  closeLightbox() {
+    this.setState({
+      currentImage: 0,
+      lightboxIsOpen: false
+    });
+  }
+  gotoPrevious() {
+    this.setState({
+      currentImage: this.state.currentImage - 1
+    });
+  }
+  gotoNext() {
+    this.setState({
+      currentImage: this.state.currentImage + 1
+    });
+  }
   onExiting() {
     this.animating = true;
   }
@@ -128,6 +163,46 @@ class Single_Space extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 border rounded my-4">
+            <div className="property__info hide">
+                  <h3 className="property__info__title">
+                    Coffee shop on Maryland Rd.
+                  </h3>
+                  <div className="row">
+                    <div className="col-6">
+                      <p className="property__info__location">
+                        <i className="fa fa-map-marker" aria-hidden="true" />{" "}
+                        Wood Green, London, N22
+                      </p>
+                    </div>
+                    <div className="col-6" />
+                  </div>
+                  <div className="property__info__agent">
+                    <img
+                      src={agentImage}
+                      alt="Harvey Specter"
+                      className="property__info__agent__image"
+                    />
+                    <p className="property__info__offered-by">
+                      Offered by:
+                      <span className="property__info__agent__name">
+                        Mary Shakes
+                      </span>
+                      <span className="property__info__agent__rating">
+                        <i className="fa fa-star" aria-hidden="true" />
+                        <i className="fa fa-star" aria-hidden="true" />
+                        <i className="fa fa-star" aria-hidden="true" />
+                        <i className="fa fa-star" aria-hidden="true" />
+                        <i className="fa fa-star-o" aria-hidden="true" />
+                      </span>
+                      <span
+                        className="property__info__agent__name"
+                        style={{ fontSize: "1rem" }}
+                      >
+                        58 ratings
+                      </span>
+                    </p>
+                  </div>
+                </div>
               <div className="desc">
                 <div className="subtitle">
                   <h2>The space</h2>
@@ -340,7 +415,19 @@ class Single_Space extends Component {
               </div>
             </div>
             <div className="col-md-4">
-              <div className="p4 border rounded my-4">
+              <div className="p-3 border rounded my-4">
+                <div className="hide-gallery">
+                  <Gallery photos={photos} onClick={this.openLightbox} />
+                  <Lightbox
+                    images={photos}
+                    onClose={this.closeLightbox}
+                    onClickPrev={this.gotoPrevious}
+                    onClickNext={this.gotoNext}
+                    currentImage={this.state.currentImage}
+                    isOpen={this.state.lightboxIsOpen}
+                  />
+                </div>
+                <br/>
                 <div className="map" style={{ width: "100%", height: "400px" }}>
                   <GoogleMapReact
                     defaultCenter={this.props.center}
@@ -357,7 +444,7 @@ class Single_Space extends Component {
                   </GoogleMapReact>
                 </div>
                 <br />
-                <div className="property__info">
+                <div className="property__info hide-mobile">
                   <h3 className="property__info__title">
                     Coffee shop on Maryland Rd.
                   </h3>
@@ -508,7 +595,7 @@ class Single_Space extends Component {
           </div>
         </div>
         <div className="mobile-book-button">
-          <div className="row">
+          <div className="row d-flex align-items-center">
             <div className="col-4 border-right">
               <p className="price text-left mr-3 text-light">
                 from / per night <span>$244</span>
