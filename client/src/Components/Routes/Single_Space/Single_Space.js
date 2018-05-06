@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-// import { GoogleApiWrapper } from 'google-maps-react'
 import GoogleMapReact from "google-map-react";
-// import MapContainer from './MapContainer'
-
+import PropterySec from "./PropertySec";
 import {
   Carousel,
   CarouselItem,
@@ -129,55 +127,8 @@ class Single_Space extends Component {
         </Carousel>
         <div className="container">
           <div className="row">
-            <div className="col-md-8">
-              <div className="property__info">
-                <h3 className="property__info__title">
-                  Coffee shop on Maryland Rd.
-                </h3>
-                <div className="row">
-                  <div className="col-6">
-                    <p className="property__info__location">
-                      <i className="fa fa-map-marker" aria-hidden="true" /> Wood
-                      Green, London, N22
-                    </p>
-                  </div>
-                  <div className="col-6">
-                    <p className="price text-right">
-                      from / per night <span>$244</span>
-                    </p>
-                  </div>
-                </div>
-                <div className="property__info__agent">
-                  <img
-                    src={agentImage}
-                    alt="Harvey Specter"
-                    className="property__info__agent__image"
-                  />
-                  <p className="property__info__offered-by">
-                    Offered by:
-                    <span className="property__info__agent__name">
-                      Mary Shakes
-                    </span>
-                    <span className="property__info__agent__rating">
-                      <i className="fa fa-star" aria-hidden="true" />
-                      <i className="fa fa-star" aria-hidden="true" />
-                      <i className="fa fa-star" aria-hidden="true" />
-                      <i className="fa fa-star" aria-hidden="true" />
-                      <i className="fa fa-star-o" aria-hidden="true" />
-                    </span>
-                    <span
-                      className="property__info__agent__name"
-                      style={{ fontSize: "1rem" }}
-                    >
-                      58 ratings
-                    </span>
-                  </p>
-                </div>
-              </div>
+            <div className="col-md-8 border rounded my-4">
               <div className="desc">
-                <div className="title">
-                  <h1>Description</h1>
-                </div>
                 <div className="subtitle">
                   <h2>The space</h2>
                   <p>
@@ -388,25 +339,164 @@ class Single_Space extends Component {
                 </Table>
               </div>
             </div>
-            <div className="col-md-4 p4">
-              <div className="map" style={{ width: "100%", height: "400px" }}>
-                <GoogleMapReact
-                  defaultCenter={this.props.center}
-                  defaultZoom={this.props.zoom}
-                  bootstrapURLKeys={{ key: 'AIzaSyDN96lf2Q1ryYwYevi2QKLZboxk3ILPGCk' }}
-                >
-                  <AnyReactComponent
-                    lat={40.747331}
-                    lng={-73.851744}
-                    text={"Coffee shop on Maryland Rd."}
+            <div className="col-md-4">
+              <div className="p4 border rounded my-4">
+                <div className="map" style={{ width: "100%", height: "400px" }}>
+                  <GoogleMapReact
+                    defaultCenter={this.props.center}
+                    defaultZoom={this.props.zoom}
+                    bootstrapURLKeys={{
+                      key: "AIzaSyDN96lf2Q1ryYwYevi2QKLZboxk3ILPGCk"
+                    }}
+                  >
+                    <AnyReactComponent
+                      lat={40.747331}
+                      lng={-73.851744}
+                      text={"Coffee shop on Maryland Rd."}
+                    />
+                  </GoogleMapReact>
+                </div>
+                <br />
+                <div className="property__info">
+                <h3 className="property__info__title">
+                  Coffee shop on Maryland Rd.
+                </h3>
+                <div className="row">
+                  <div className="col-6">
+                    <p className="property__info__location">
+                      <i className="fa fa-map-marker" aria-hidden="true" /> Wood
+                      Green, London, N22
+                    </p>
+                  </div>
+                  <div className="col-6" />
+                </div>
+                <div className="property__info__agent">
+                  <img
+                    src={agentImage}
+                    alt="Harvey Specter"
+                    className="property__info__agent__image"
                   />
-                </GoogleMapReact>
+                  <p className="property__info__offered-by">
+                    Offered by:
+                    <span className="property__info__agent__name">
+                      Mary Shakes
+                    </span>
+                    <span className="property__info__agent__rating">
+                      <i className="fa fa-star" aria-hidden="true" />
+                      <i className="fa fa-star" aria-hidden="true" />
+                      <i className="fa fa-star" aria-hidden="true" />
+                      <i className="fa fa-star" aria-hidden="true" />
+                      <i className="fa fa-star-o" aria-hidden="true" />
+                    </span>
+                    <span
+                      className="property__info__agent__name"
+                      style={{ fontSize: "1rem" }}
+                    >
+                      58 ratings
+                    </span>
+                  </p>
+                </div>
               </div>
-              <br/>
-             <a href={'/'+ space + '/book'} className="btn btn-block btn-info">BOOK IT NOW</a> 
-             <a href={space} className="btn btn-block btn-outline-danger"><i className="fa fa-heart"></i> ADD TO FAVOURITE</a>
-              <br />
+                <p className="price text-right mr-3">
+                  from / per night <span>$244</span>
+                </p>
+                <br />
+                <div className="px-3">
+                <a
+                  href={"/" + space + "/book"}
+                  className="btn btn-block btn-info btn-lg book-btn"
+                >
+                  BOOK IT NOW
+                </a>
+                <a href={space} className="btn btn-block btn-lg btn-outline-danger fav-btn">
+                  <i className="fa fa-heart" /> ADD TO FAVOURITE
+                </a>
+                </div>
+                <br />
+              </div>
             </div>
+          </div>
+        </div>
+        {/* Bottom */}
+        <div className="bottom">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12 text-center">
+                <h2>The WorkClub Promise</h2>
+                <p>
+                  When booking with WorkClub, you’ll enjoy a seamless and
+                  consistent end-to-end experience, from finding the perfect
+                  spot for your meeting, to getting productive and creative with
+                  your team.
+                </p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-4">
+                <div className="box">
+                  <h3>A Place To Do Your Best Work</h3>
+                  <p>
+                    WorkClub spaces are sourced and designed by our in-house
+                    team, who use research to create spaces that help run
+                    productive meetings and spark creativity.
+                  </p>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="box">
+                  <h3>Consistently High Standards</h3>
+                  <p>
+                    Our spaces are maintained and cleaned before every use by
+                    detail oriented WorkClub employees.
+                  </p>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="box">
+                  <h3>Always At Your Service</h3>
+                  <p>
+                    Our customer care team can be reached by phone, email or
+                    live chat, 24/7. Need help finding a space? Have a special
+                    request? Get in touch.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-12 text-center">
+                <h2>How It Works</h2>
+                <p>When booking with WorkClub, you’ll enjoy a seamless and consistent end-to-end experience, from finding the perfect spot for your meeting, to getting productive and creative with your team.</p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-4">
+                <h3>Instant Booking</h3>
+                <p>
+                  Our users love how easy and fast it is to find and book a room
+                  - by the hour or day - today or weeks ahead of time.
+                </p>
+              </div>
+              <div className="col-md-4">
+                <h3>Special requests</h3>
+                <p>
+                  Need the tables rearranged? Want 3rd party catering? A guided
+                  tour of a space before booking? Just talk to us 24/7 by phone,
+                  or email.
+                </p>
+              </div>
+              <div className="col-md-4">
+                <h3>Easy access</h3>
+                <p>
+                  We'll provide you with access details post your booking.
+                  Check-in is taken care of by our partners. It's that simple.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="row">
+            <PropterySec title="Other Spaces You Might Like" />
           </div>
         </div>
       </div>
