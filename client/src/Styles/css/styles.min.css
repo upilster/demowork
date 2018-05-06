@@ -1034,10 +1034,6 @@ button:focus {
     flex-direction: row;
     align-items: center;
   }
-  /* .Browse--space .form-control {
-    margin-left: 10px;
-    margin-top: -19px;
-  } */
   #scroll-top {
     display: none;
     position: fixed;
@@ -1172,7 +1168,7 @@ button:focus {
     bottom: 0;
     width: 100%;
     padding: 15px;
-    background-color: #282f39;
+    background-color: rgb(42, 42, 42);
     z-index: 1;
   }
 }
