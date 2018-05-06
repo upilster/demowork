@@ -1088,7 +1088,7 @@ button:focus {
   margin-bottom: 30px;
   margin-top: 30px;
 }
-.Single-room .bottom h3{
+.Single-room .bottom h3 {
   font-size: 1.8rem;
 }
 .Single-room .borderless td,
@@ -1123,20 +1123,40 @@ button:focus {
   color: #fff !important;
   padding: 30px 0 50px 0;
 }
-.Single-room .bottom h2, .Single-room .bottom h3  {
+.Single-room .bottom h2,
+.Single-room .bottom h3 {
   color: #41bff1;
 }
-.book-btn{
+.book-btn {
   background-color: #41bff1;
   border-color: #41bff1;
 }
-.fav-btn, .book-btn{
+.fav-btn,
+.book-btn {
   font-size: 1rem;
+}
+.Single-room .mobile-book-button{
+  display: none;
 }
 @media screen and (max-width: 1000px) {
   .carousel,
-.carousel-item {
-  height: 300px;
-  width: 100%;
-}
+  .carousel-item {
+    height: 300px;
+    width: 100%;
+  }
+  .Single-room .btn-section{
+    display: none;
+  }
+  .hidden-price{
+    display: none;
+  }
+  .Single-room .mobile-book-button{
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #282f39;
+    z-index: 1;
+  }
 }
