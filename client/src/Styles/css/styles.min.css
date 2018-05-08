@@ -1,7 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
 body,
 html {
   padding: 0;
   margin: 0;
+  font-family: montserrat, arial, verdana;
+}
+.btn:focus,
+.btn:active,
+.btn.active {
+  outline: none !important;
+  box-shadow: none;
 }
 a:hover {
   text-decoration: none;
@@ -1131,24 +1140,45 @@ button:focus {
 .book-btn {
   font-size: 1rem;
 }
-.Single-room .mobile-book-button{
+.Single-room .mobile-book-button {
   display: none;
 }
-.Single-room .property__info.hide{
+.Single-room .property__info.hide {
   display: none;
+}
+
+.react-datepicker__input-container input {
+  border: 1px solid #ced4da !important;
+  border-radius: 0.25rem !important;
+  padding: 0.375rem 0.75rem !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+.react-datepicker__day {
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.react-datepicker-wrapper {
+  display: inline-block;
+  width: 100%;
+}
+.modal a:hover {
+  color: #333;
 }
 @media screen and (max-width: 1000px) {
-  .map-sec-mobile{
+  .map-sec-mobile {
     padding: 0 !important;
     border: none !important;
   }
-  .Single-room .property__info.hide{
+  .Single-room .property__info.hide {
     display: block;
   }
-  .Single-room .property__info.hide-mobile{
+  .Single-room .property__info.hide-mobile {
     display: none;
   }
-  .Single-room .hide-gallery{
+  .Single-room .hide-gallery {
     display: none;
   }
   .carousel,
@@ -1156,13 +1186,13 @@ button:focus {
     height: 300px;
     width: 100%;
   }
-  .Single-room .btn-section{
+  .Single-room .btn-section {
     display: none;
   }
-  .hidden-price{
+  .hidden-price {
     display: none;
   }
-  .Single-room .mobile-book-button{
+  .Single-room .mobile-book-button {
     display: block;
     position: fixed;
     bottom: 0;

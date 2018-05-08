@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import GoogleMapReact from "google-map-react";
 import PropterySec from "./PropertySec";
 import {
@@ -7,8 +8,20 @@ import {
   CarouselControl,
   CarouselIndicators,
   CarouselCaption,
-  Table
+  Table,
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  FormText
 } from "reactstrap";
+import DatePicker from "react-datepicker";
+import moment from "moment";
 import Gallery from "react-photo-gallery";
 import Lightbox from "react-images";
 import backgroundImage1 from "../../../Media/properties/house1.jpg";
@@ -19,6 +32,8 @@ import board from "../../../Media/list2.png";
 import television from "../../../Media/list5.png";
 import aircondition from "../../../Media/list5.png";
 import wifi from "../../../Media/list8.png";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -39,7 +54,6 @@ const items = [
     caption: "Slide 3"
   }
 ];
-
 const photos = [
   { src: backgroundImage1, width: 4, height: 3 },
   { src: backgroundImage2, width: 1, height: 1 },
@@ -49,12 +63,18 @@ const photos = [
 class Single_Space extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       activeIndex: 0,
       currentImage: 0,
       lightboxIsOpen: false,
-      showMoreAdditional: false
+      showMoreAdditional: false,
+      modal: false,
+      value: 0,
+      previous: 0,
+      startDate: null
     };
+    this.toggle = this.toggle.bind(this);
     this.openLightbox = this.openLightbox.bind(this);
     this.closeLightbox = this.closeLightbox.bind(this);
     this.gotoNext = this.gotoNext.bind(this);
@@ -64,14 +84,27 @@ class Single_Space extends Component {
     this.goToIndex = this.goToIndex.bind(this);
     this.onExiting = this.onExiting.bind(this);
     this.onExited = this.onExited.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
   static defaultProps = {
     center: {
-      lat: 23.810332,
-      lng: 90.412518
+      lat: 51.509865,
+      lng: -0.118092
     },
     zoom: 8
   };
+  //Dtae picker
+  handleChange(date) {
+    this.setState({
+      startDate: date
+    });
+  }
+  //MODAL
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
   // GALLERY
   openLightbox(event, obj) {
     this.setState({
@@ -127,7 +160,9 @@ class Single_Space extends Component {
   }
   render() {
     const space = this.props.match.match.params.space;
-    const showMoreAdditionalStyle = this.state.showMoreAdditional ? "table-row" : "none";
+    const showMoreAdditionalStyle = this.state.showMoreAdditional
+      ? "table-row"
+      : "none";
     const { activeIndex } = this.state;
     const slides = items.map(item => {
       return (
@@ -141,7 +176,6 @@ class Single_Space extends Component {
         </CarouselItem>
       );
     });
-    console.log(space);
     return (
       <div className="Single-room">
         <Carousel
@@ -490,7 +524,7 @@ class Single_Space extends Component {
                       </td>
                       <td>
                         <i
-                          class="Icon-cxuQhR iBbLlo x6tr9b-0 fStrAa"
+                          className="Icon-cxuQhR iBbLlo x6tr9b-0 fStrAa"
                           width="24px"
                           height="24px"
                         >
@@ -698,7 +732,7 @@ class Single_Space extends Component {
                         <i className="fa fa-times" />
                       </td>
                     </tr>
-                    <tr style={{display: showMoreAdditionalStyle}} >
+                    <tr style={{ display: showMoreAdditionalStyle }}>
                       <td>Gym</td>
                       <td>
                         <i className="fa fa-times" />
@@ -708,7 +742,7 @@ class Single_Space extends Component {
                         <i className="fa fa-check" />
                       </td>
                     </tr>
-                    <tr style={{display: showMoreAdditionalStyle}} >
+                    <tr style={{ display: showMoreAdditionalStyle }}>
                       <td>Lockers</td>
                       <td>
                         <i className="fa fa-check" />
@@ -718,7 +752,7 @@ class Single_Space extends Component {
                         <i className="fa fa-check" />
                       </td>
                     </tr>
-                    <tr style={{display: showMoreAdditionalStyle}} >
+                    <tr style={{ display: showMoreAdditionalStyle }}>
                       <td>Pets Allowed</td>
                       <td>
                         <i className="fa fa-times" />
@@ -728,7 +762,7 @@ class Single_Space extends Component {
                         <i className="fa fa-check" />
                       </td>
                     </tr>
-                    <tr style={{display: showMoreAdditionalStyle}} >
+                    <tr style={{ display: showMoreAdditionalStyle }}>
                       <td>Showers</td>
                       <td>
                         <i className="fa fa-times" />
@@ -742,10 +776,14 @@ class Single_Space extends Component {
                 </Table>
                 <p
                   className="text-info"
-                  onClick={() => this.setState({ showMoreAdditional: !this.state.showMoreAdditional })}
+                  onClick={() =>
+                    this.setState({
+                      showMoreAdditional: !this.state.showMoreAdditional
+                    })
+                  }
                   style={{ fontWeight: 600, cursor: "pointer" }}
                 >
-                  {this.state.showMoreAdditional ? 'Show less' : 'Show more'}
+                  {this.state.showMoreAdditional ? "Show less" : "Show more"}
                 </p>
               </div>
             </div>
@@ -824,12 +862,12 @@ class Single_Space extends Component {
                 </p>
                 <br />
                 <div className="px-3 btn-section">
-                  <a
-                    href={"/" + space + "/book"}
+                  <button
                     className="btn btn-block btn-info btn-lg book-btn"
+                    onClick={this.toggle}
                   >
                     BOOK IT NOW
-                  </a>
+                  </button>
                   <a
                     href={space}
                     className="btn btn-block btn-lg btn-outline-danger fav-btn"
@@ -937,12 +975,183 @@ class Single_Space extends Component {
               </p>
             </div>
             <div className="col-8">
-              <a
+              <button
                 href={"/" + space + "/book"}
                 className="btn btn-block btn-info btn-lg book-btn"
+                onClick={this.toggle}
               >
                 BOOK IT NOW
-              </a>
+              </button>
+              <Modal
+                isOpen={this.state.modal}
+                toggle={this.toggle}
+                className={this.props.className}
+              >
+                <ModalHeader toggle={this.toggle}>Request to Book</ModalHeader>
+                <ModalBody>
+                  <div className="container">
+                    <div className="login-form">
+                      <Form>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <FormGroup>
+                              <Input
+                                type="email"
+                                name="email"
+                                id="exampleEmail"
+                                placeholder="Email"
+                              />
+                            </FormGroup>
+                          </div>
+                          <div className="col-md-6">
+                            <FormGroup>
+                              <Input
+                                type="password"
+                                name="email"
+                                id="exampleEmail"
+                                placeholder="Password"
+                              />
+                            </FormGroup>
+                          </div>
+                        </div>
+                        <button
+                          className="btn btn-info"
+                          style={{ backgroundColor: "#41bff1" }}
+                        >
+                          LOGIN
+                        </button>{" "}
+                        <a href="/register">Don't have any account?</a>
+                      </Form>
+                    </div>
+                    <br />
+                    <div className="form1">
+                      <Form>
+                        <div className="row">
+                          <div className="col-md-12">
+                            <FormGroup>
+                              <Input
+                                type="textarea"
+                                name="text"
+                                id="exampleText"
+                                placeholder="Message"
+                              />
+                            </FormGroup>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-6">
+                            <FormGroup>
+                              <DatePicker
+                                selected={this.state.startDate}
+                                onChange={this.handleChange}
+                                minDate={moment()}
+                                maxDate={moment().add(6, "months")}
+                                isClearable={true}
+                                placeholderText="Move in Date"
+                                showDisabledMonthNavigation
+                              />
+                            </FormGroup>
+                          </div>
+                          <div className="col-6">
+                            <FormGroup>
+                              <Input
+                                type="select"
+                                name="selectMulti"
+                                id="exampleSelectMulti"
+                              >
+                                <option value="">Duration</option>
+                                <option value="OneMonth">1 month</option>
+                                <option value="ThreeMonths">3 months</option>
+                                <option value="SixMonth">6 months</option>
+                                <option value="OneYear">1 year or more</option>
+                              </Input>
+                            </FormGroup>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-12">
+                            <FormGroup>
+                              <Input
+                                type="text"
+                                name="email"
+                                id="exampleEmail"
+                                placeholder="Full Name"
+                              />
+                            </FormGroup>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-12">
+                            <FormGroup>
+                              <Input
+                                type="email"
+                                name="email"
+                                id="exampleEmail"
+                                placeholder="Email"
+                              />
+                            </FormGroup>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <h4>Select Membership</h4>
+                            <FormGroup>
+                              <Input
+                                type="select"
+                                name="selectMulti"
+                                id="exampleSelectMulti"
+                              >
+                                <option value="">Select</option>
+                                <option value="OneMonth">Membership 1</option>
+                                <option value="ThreeMonths">
+                                  Membership 2
+                                </option>
+                                <option value="SixMonth">Membership 13</option>
+                              </Input>
+                            </FormGroup>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-12">
+                            <button
+                              className="btn btn-info"
+                              style={{ backgroundColor: "#41bff1" }}
+                            >
+                              PROCEED TO BOOK
+                            </button>{" "}
+                          </div>
+                        </div>
+                      </Form>
+                    </div>
+
+                    {/* FORM 2 */}
+                    <br />
+                    {/* <div className="text-left">or</div> */}
+                    {/* <div className="row">
+                        <div className="col-md-6">
+                          <h4>Select Payment Method</h4>
+                          <FormGroup>
+                          <Input
+                                  type="select"
+                                  name="selectMulti"
+                                  id="exampleSelectMulti"
+                                >
+                                <option value="">Select</option>
+                                  <option value="Paypal">Paypal</option>
+                                  <option value="Stripe">Stripe</option>
+                                </Input>
+                          </FormGroup>
+                        </div>
+                      </div> */}
+                    <div className="text-center mt-3">
+                      By sending you agree to WorkClub{" "}
+                      <a href="/">Terms of Use</a> and{" "}
+                      <a href="">Privacy Policy</a>.
+                    </div>
+                  </div>
+                </ModalBody>
+                <ModalFooter />
+              </Modal>
               <a
                 href={space}
                 className="btn btn-block btn-lg btn-outline-danger fav-btn"
