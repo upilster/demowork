@@ -33,9 +33,12 @@ export default class PropterySec extends Component {
             agentName="Mary Shakes"
             agentImage={agent1Image}
           />
+          <a href="/browse-space">
           <button type="button" name="button" className="properties__view-more">
             View more
           </button>
+
+          </a>
         </div>
       </section>
     );

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SignleExperienceCard from "./SingleExperienceCard";
-import backgroundImage from '../../../Media/image4.jpg'
+import backgroundImage from "../../../Media/image4.jpg";
 export default class Experience extends Component {
   render() {
     return (
@@ -24,9 +24,11 @@ export default class Experience extends Component {
             details="Coworking is a style of work which involves a shared working environment where individuals share equipment, knowledge and ideas..."
           />
         </div>
-        <button type="button" name="button" className="properties__view-more">
-          Find The Right Space
-        </button>
+        <a href="/browse-space">
+          <button type="button" name="button" className="properties__view-more">
+            Find The Right Space
+          </button>
+        </a>
       </section>
     );
   }

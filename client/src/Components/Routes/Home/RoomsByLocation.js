@@ -35,6 +35,7 @@ export default class RoomsByLocation extends Component {
               agentName="Mary Shakes"
               agentImage={agent1Image}
             />
+            <a href="/browse-space">
             <button
               type="button"
               name="button"
@@ -42,6 +43,7 @@ export default class RoomsByLocation extends Component {
             >
               View more
             </button>
+            </a>
             <br />
           </div>
         </section>

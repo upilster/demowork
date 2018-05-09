@@ -18,7 +18,12 @@
 .launcher{
   background-color: rgb(65, 191, 241);
 }
-
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
 @media only screen and (max-width: 600px) {
   .widget-container {
       display: none;

@@ -12,6 +12,7 @@ import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Routes/Home/Home";
 import Browse_Spaces from "./Components/Routes/Browse_Spaces/Browse_Spaces";
 import Single_Space from "./Components/Routes/Single_Space/Single_Space";
+import Join from "./Components/Routes/Join/Join";
 
 
 class App extends Component {
@@ -43,6 +44,7 @@ class App extends Component {
             component={() => <Browse_Spaces />}
           />
           <Route path="/browse-space/:space" component={(match) => <Single_Space match={match}/>} />
+          <Route exact path="/join" component={() => <Join />} />
           <Footer />
           <Widget
             handleNewUserMessage={this.handleNewUserMessage}

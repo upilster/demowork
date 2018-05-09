@@ -1020,7 +1020,7 @@ class Single_Space extends Component {
                         >
                           LOGIN
                         </button>{" "}
-                        <a href="/register">Don't have any account?</a>
+                        <a href="/membership">Join with us.</a>
                       </Form>
                     </div>
                     <br />

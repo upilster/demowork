@@ -14,7 +14,7 @@ export default class SinglePropertyCard extends Component {
     return (
       <div className="property">
         {/* <a href="/browse-space/separate-space"> */}
-        <Link to="/browse-space/separate-space">
+        <Link to="/browse-space/separate-space" target="_blank">
           <div className="property__bid">
             <div
               className="property__bid__image"
